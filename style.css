@@ -1,0 +1,11 @@
+.product-item img {
+    max-width: 100%;
+    max-height: 200px; /* You can adjust the maximum height as needed */
+    object-fit: cover;
+  }
+
+  /* CSS to add margin between cards */
+  .card-deck .card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }

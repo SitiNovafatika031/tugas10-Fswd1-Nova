@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AdminLTE 3.2.0</title>
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/css/adminlte.min.css">
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="#"><b>Dipedesin</b>.id</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Silahkan Login Untuk Melanjutkan</p>
+
+                <form id="loginForm" action="login.php" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" name="username" class="form-control" placeholder="Username" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">
+                                    Remember Me
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" name="login" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
+                <p class="mb-1">
+                    <a href="forgot_password.html">Lupa Password</a>
+                </p>
+                <p class="mb-0">
+                    <a href="register.html" class="text-center">Register</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js"></script>
+
+    <script>
+        // Handle form submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            var form = this;
+            
+            // Perform AJAX login request
+            // You should replace this with your actual AJAX login implementation
+            // This is just a placeholder
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form)
+            })
+            .then(response => {
+                if (response.ok) {
+                    // If login is successful, redirect to dashboard HTML
+                    window.location.href = 'dashboard.html';
+                } else {
+                    // Handle failed login
+                    console.error('Login failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error during login:', error);
+            });
+        });
+    </script>
+</body>
+</html>
